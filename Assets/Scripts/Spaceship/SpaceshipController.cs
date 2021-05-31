@@ -8,13 +8,15 @@ public class SpaceshipController : MonoBehaviour
     public Rigidbody2D rb;
     public Transform transform;
     public float movementSpeed = 5.0f;
+    public float shootCooldown = 1.0f;
 
     public GameObject bulletPrefab;
+    private float _shootCooldown;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        _shootCooldown = shootCooldown;  
     }
 
     // Update is called once per frame
@@ -48,7 +50,9 @@ public class SpaceshipController : MonoBehaviour
 
     private void PerformShoot()
     {
-        if (Input.GetMouseButtonDown(0))
+        _shootCooldown -= Time.deltaTime;
+
+        if (Input.GetMouseButton(0) && _shootCooldown <= 0)
         {
             Vector2 positionOnScreen = Camera.main.WorldToScreenPoint(transform.position);
             Vector2 mouseOnScreen = (Vector2)Input.mousePosition;
@@ -57,6 +61,8 @@ public class SpaceshipController : MonoBehaviour
 
             GameObject bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity) as GameObject;
             bullet.SendMessage("MoveToDirection", shootDir.normalized);
+
+            _shootCooldown = shootCooldown;
         }
           
     }
