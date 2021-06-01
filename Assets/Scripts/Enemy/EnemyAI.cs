@@ -38,6 +38,7 @@ public class EnemyAI : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(col.gameObject);
+            GameManager.score += 50;
         }
     }
 }
