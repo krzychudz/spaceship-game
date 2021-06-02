@@ -12,7 +12,8 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _spawnCooldown = GameManager.enemySpawnCooldown + Random.Range(-2.0f, 3.0f);
+        float initialOffset = Random.Range(-2.0f, 3.0f);
+        _spawnCooldown = GameManager.enemySpawnCooldown + initialOffset;
     }
 
     // Update is called once per frame
