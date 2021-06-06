@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public float movementSpeed = 5.0f;
+    public float slowDownTime = 0.0f;
 
     private Rigidbody2D rb;
     private Transform enemyTransform;
@@ -21,6 +22,13 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (slowDownTime >= 0)
+        {
+            slowDownTime -= Time.deltaTime;
+        } else
+        {
+            movementSpeed = 5.0f;
+        }
     }
 
     void FixedUpdate()
@@ -30,6 +38,12 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 movementDir = (playerPosition - enemyPositon).normalized;
         rb.velocity = new Vector2(movementDir.x * movementSpeed, movementDir.y * movementSpeed);
+    }
+
+    void SlowDown()
+    {
+        slowDownTime = 5.0f;
+        movementSpeed = 2.0f;
     }
 
     void OnTriggerEnter2D(Collider2D col)

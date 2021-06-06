@@ -61,6 +61,7 @@ public class PowerUp : MonoBehaviour
                     ClearEnemies();
                     break;
                 case PowerUpType.EnemySlowDown:
+                    SlowDownEnemies();
                     break;
                 default:
                     break;
@@ -73,8 +74,23 @@ public class PowerUp : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
         {
-            GameManager.score += 50;
-            Destroy(enemy);
+            if (enemy.GetComponent<Renderer>().isVisible)
+            {
+                GameManager.score += 50;
+                Destroy(enemy);
+            }
+        }
+    }
+
+    private void SlowDownEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemy.GetComponent<Renderer>().isVisible)
+            {
+                enemy.SendMessage("SlowDown");
+            }
         }
     }
 }
