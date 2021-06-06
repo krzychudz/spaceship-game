@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float movementSpeed = 5.0f;
+    public float movementSpeed = 3.5f;
     public float slowDownTime = 0.0f;
 
     private Rigidbody2D rb;
@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
             slowDownTime -= Time.deltaTime;
         } else
         {
-            movementSpeed = 5.0f;
+            movementSpeed = 3.5f;
         }
     }
 
@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour
 
     void SlowDown()
     {
-        slowDownTime = 5.0f;
+        slowDownTime = 2.5f;
         movementSpeed = 2.0f;
     }
 
