@@ -29,6 +29,8 @@ public class EnemyAI : MonoBehaviour
         {
             movementSpeed = 3.5f;
         }
+
+        AdjustRotationRelativeToPlayer();
     }
 
     void FixedUpdate()
@@ -54,5 +56,20 @@ public class EnemyAI : MonoBehaviour
             Destroy(col.gameObject);
             GameManager.score += 50;
         }
+    }
+
+    private void AdjustRotationRelativeToPlayer()
+    {
+        Vector2 positionOnScreen = Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 playerPositionOnScreen = Camera.main.WorldToScreenPoint(playerTransform.position);
+
+        float angle = AngleBetweenTwoPoints(positionOnScreen, playerPositionOnScreen);
+
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+    }
+
+    private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 }
