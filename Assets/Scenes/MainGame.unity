@@ -432,7 +432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 214.40543, y: -39}
+  m_AnchoredPosition: {x: 205, y: -34}
   m_SizeDelta: {x: 386.8109, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370167023
@@ -457,8 +457,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 100'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d161b66eda676444a8d86e5a8ab85834, type: 2}
+  m_sharedMaterial: {fileID: -3328253792147477813, guid: d161b66eda676444a8d86e5a8ab85834, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -482,8 +482,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -532,37 +532,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370167021}
   m_CullTransparentMesh: 1
---- !u!1 &1715210806 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5502508210643742722, guid: 2b42722814dc5b547aee7b2517010401, type: 3}
-  m_PrefabInstance: {fileID: 5502508209472012354}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1715210810
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715210806}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
 --- !u!1 &1942134951
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -196, y: -39}
+  m_AnchoredPosition: {x: -189, y: -34}
   m_SizeDelta: {x: 352.8361, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2046728020
@@ -688,8 +657,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lives: 3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d161b66eda676444a8d86e5a8ab85834, type: 2}
+  m_sharedMaterial: {fileID: -3328253792147477813, guid: d161b66eda676444a8d86e5a8ab85834, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -713,8 +682,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
