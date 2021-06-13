@@ -12,6 +12,8 @@ public class PowerUp : MonoBehaviour
     public Sprite slowDownSprite;
     public Sprite explosionSprite;
 
+    private bool powerUpTaken = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,10 +49,11 @@ public class PowerUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && !powerUpTaken)
         {
             PowerUpManager.isPowerUpSpawned = false;
             Destroy(gameObject);
+            powerUpTaken = true;
 
             switch (powerUpType)
             {
