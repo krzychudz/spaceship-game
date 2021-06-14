@@ -15,7 +15,7 @@ public class SpaceshipController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _shootCooldown = GameManager.playerShootCooldown;  
+        _shootCooldown = 0;
     }
 
     // Update is called once per frame
@@ -55,10 +55,11 @@ public class SpaceshipController : MonoBehaviour
         {
             Vector2 positionOnScreen = Camera.main.WorldToScreenPoint(transform.position);
             Vector2 mouseOnScreen = (Vector2)Input.mousePosition;
+            float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
 
             Vector2 shootDir = mouseOnScreen - positionOnScreen;
 
-            GameObject bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity) as GameObject;
+            GameObject bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(new Vector3(0f, 0f, angle))) as GameObject;
             bullet.SendMessage("MoveToDirection", shootDir.normalized);
 
             _shootCooldown = GameManager.playerShootCooldown;
