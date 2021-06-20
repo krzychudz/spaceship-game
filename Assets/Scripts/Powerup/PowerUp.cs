@@ -80,7 +80,8 @@ public class PowerUp : MonoBehaviour
             if (enemy.GetComponent<Renderer>().isVisible)
             {
                 GameManager.score += 50;
-                Destroy(enemy);
+                EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+                enemyAI.DestroyEnemy();
             }
         }
     }

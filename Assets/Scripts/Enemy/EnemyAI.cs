@@ -54,10 +54,9 @@ public class EnemyAI : MonoBehaviour
     {
         if (col.gameObject.tag == "Bullet")
         {
-            Destroy(gameObject);
             Destroy(col.gameObject);
             GameManager.score += 50;
-            TriggerDestroyedEffect();
+            DestroyEnemy();
         }
     }
 
@@ -76,8 +75,9 @@ public class EnemyAI : MonoBehaviour
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
-    private void TriggerDestroyedEffect()
+    public void DestroyEnemy()
     {
         Instantiate(destroyedPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+        Destroy(gameObject);
     }
 }

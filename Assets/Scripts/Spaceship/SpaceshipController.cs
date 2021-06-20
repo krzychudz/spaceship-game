@@ -76,7 +76,8 @@ public class SpaceshipController : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            Destroy(col.gameObject);
+            EnemyAI enemyAI = col.gameObject.GetComponent<EnemyAI>();
+            enemyAI.DestroyEnemy();
             GameManager.lives = GameManager.lives - 1;
         }
     }
