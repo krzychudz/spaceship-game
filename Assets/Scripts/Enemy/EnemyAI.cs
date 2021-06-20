@@ -7,6 +7,8 @@ public class EnemyAI : MonoBehaviour
     public float movementSpeed = 3.5f;
     public float slowDownTime = 0.0f;
 
+    public GameObject destroyedPrefab;
+
     private Rigidbody2D rb;
     private Transform enemyTransform;
     private Transform playerTransform;
@@ -55,6 +57,7 @@ public class EnemyAI : MonoBehaviour
             Destroy(gameObject);
             Destroy(col.gameObject);
             GameManager.score += 50;
+            TriggerDestroyedEffect();
         }
     }
 
@@ -71,5 +74,10 @@ public class EnemyAI : MonoBehaviour
     private float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+
+    private void TriggerDestroyedEffect()
+    {
+        Instantiate(destroyedPrefab, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
     }
 }
