@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,7 +56,15 @@ public class GameManager : MonoBehaviour
     {
         if (lives == 0)
         {
-            // GAME OVER
+            SceneManager.LoadScene(2);
         }
+    }
+
+    public static void ResetState()
+    {
+        score = 0;
+        lives = 3;
+        enemySpawnCooldown = 5.0f;
+        playerShootCooldown = 1.0f;
     }
 }

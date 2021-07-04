@@ -10,7 +10,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayOnClicked()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(1);
     }
 
     public void ExitOnClicked()
