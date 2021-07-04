@@ -19,7 +19,7 @@ public class ParalaxBackground : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        Vector2 moveDirection = new Vector2(moveX, moveY);
+        Vector2 moveDirection = new Vector2(-moveX, -moveY);
 
         transform.position = new Vector3(transform.position.x + moveDirection.x * paralaxSpeed, transform.position.y + moveDirection.y * paralaxSpeed, transform.position.z);
     }
