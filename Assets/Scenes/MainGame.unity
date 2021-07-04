@@ -390,7 +390,7 @@ MonoBehaviour:
   livesText: {fileID: 2046728020}
   enemySpawnPrefab: {fileID: 5158559528403398558, guid: f4c42b6b1f1c1204582cdc219f8614f2, type: 3}
   minEnemySpawnCooldown: 1.5
-  minPlayerShootCooldown: 0.1
+  minPlayerShootCooldown: 0.15
 --- !u!4 &899294779
 Transform:
   m_ObjectHideFlags: 0

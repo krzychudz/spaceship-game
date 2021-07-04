@@ -123,6 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 0}
-  healthPackSprite: {fileID: 21300000, guid: 345bc281f554b9843bf5f4eadda7c396, type: 3}
-  slowDownSprite: {fileID: 21300000, guid: 4dea99c60b783cf4f8c9b554c43380e8, type: 3}
-  explosionSprite: {fileID: 21300000, guid: fc6bcc7ddc8c27a4cadd8f5c9193c929, type: 3}
+  healthPackSprite: {fileID: 21300000, guid: a47d3af28d15bbf428444583367614f4, type: 3}
+  slowDownSprite: {fileID: 21300000, guid: 26cf443d5eccfa147957d1d065dd64a4, type: 3}
+  explosionSprite: {fileID: 21300000, guid: 7633a6a2e3336d847aa218dd239b9e62, type: 3}
