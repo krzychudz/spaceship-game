@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &372149542 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 807373510130065223, guid: 2b42722814dc5b547aee7b2517010401, type: 3}
+  m_PrefabInstance: {fileID: 1566287521}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +640,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 807373510130065223, guid: 2b42722814dc5b547aee7b2517010401, type: 3}
+      propertyPath: m_Volume
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5502508210643742720, guid: 2b42722814dc5b547aee7b2517010401, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -683,6 +692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 5502508210643742726, guid: 2b42722814dc5b547aee7b2517010401, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 372149542}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b42722814dc5b547aee7b2517010401, type: 3}
 --- !u!1 &1741365677

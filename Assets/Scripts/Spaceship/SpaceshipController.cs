@@ -10,6 +10,9 @@ public class SpaceshipController : MonoBehaviour
     public float movementSpeed = 5.0f;
 
     public GameObject bulletPrefab;
+
+    public AudioSource audioSource;
+
     private float _shootCooldown;
 
     // Start is called before the first frame update
@@ -63,6 +66,8 @@ public class SpaceshipController : MonoBehaviour
             bullet.SendMessage("MoveToDirection", shootDir.normalized);
 
             _shootCooldown = GameManager.playerShootCooldown;
+
+            audioSource.Play();
         }
           
     }
