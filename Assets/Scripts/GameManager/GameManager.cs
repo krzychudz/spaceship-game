@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public static float enemySpawnCooldown = 5.0f;
     public static float playerShootCooldown = 1.0f;
 
+    public float minEnemySpawnCooldown = 2.0f;
+    public float minPlayerShootCooldown = 0.4f;
+
     private int updatedAt = -1;
 
     // Start is called before the first frame update
@@ -32,6 +35,9 @@ public class GameManager : MonoBehaviour
         livesText.SetText("Lives: " + lives.ToString());
         UpdateEnemySpawnCdIfNecessary();
         CheckLives();
+
+        Debug.Log(enemySpawnCooldown);
+        Debug.Log(playerShootCooldown);
     }
 
     private void GenerateEnemySpawns()
@@ -44,11 +50,18 @@ public class GameManager : MonoBehaviour
 
     private void UpdateEnemySpawnCdIfNecessary()
     {
-        if (score % 500 == 0 && score != 0 && updatedAt != score)
+        if (score % 1000 == 0 && score != 0 && updatedAt != score)
         {
             updatedAt = score;
-            enemySpawnCooldown = enemySpawnCooldown - 0.2f;
-            playerShootCooldown = playerShootCooldown - 0.1f;
+            if (enemySpawnCooldown > minEnemySpawnCooldown)
+            {
+                enemySpawnCooldown = enemySpawnCooldown - 0.2f;
+            }
+
+            if (playerShootCooldown > minPlayerShootCooldown)
+            {
+                playerShootCooldown = playerShootCooldown - 0.05f;
+            }
         }
     }
 
