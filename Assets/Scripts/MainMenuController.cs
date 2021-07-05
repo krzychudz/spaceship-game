@@ -10,6 +10,11 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayOnClicked()
     {
+        SceneManager.LoadScene(2);
+    }
+
+    public void HelpOnClicked()
+    {
         SceneManager.LoadScene(1);
     }
 
