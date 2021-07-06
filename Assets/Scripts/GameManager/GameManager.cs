@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         if (lives == 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 
