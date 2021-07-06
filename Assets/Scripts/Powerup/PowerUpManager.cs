@@ -7,6 +7,7 @@ public enum PowerUpType
     Health,
     Explosion,
     EnemySlowDown,
+    Shield
 }
 
 public class PowerUpManager : MonoBehaviour
@@ -35,7 +36,7 @@ public class PowerUpManager : MonoBehaviour
             {
                 isPowerUpSpawned = true;
 
-                ArrayList powerUpTypes = new ArrayList(new[] {PowerUpType.Explosion, PowerUpType.EnemySlowDown});
+                ArrayList powerUpTypes = new ArrayList(new[] {PowerUpType.Explosion, PowerUpType.EnemySlowDown, PowerUpType.Shield});
 
                 if (GameManager.lives < 3)
                 {

@@ -8,17 +8,22 @@ public class SpaceshipController : MonoBehaviour
     public Rigidbody2D rb;
     public Transform transform;
     public float movementSpeed = 5.0f;
+    public float shieldTime = 5.0f;
+    public Animator animator;
 
     public GameObject bulletPrefab;
 
     public AudioSource audioSource;
 
     private float _shootCooldown;
+    private float _shieldTime;
+    private bool _hasShield = false;
 
     // Start is called before the first frame update
     void Start()
     {
         _shootCooldown = 0;
+        _shieldTime = shieldTime;
     }
 
     // Update is called once per frame
@@ -27,6 +32,27 @@ public class SpaceshipController : MonoBehaviour
         PerformMovement();
         RotateToMouse();
         PerformShoot();
+        CheckShieldState();
+    }
+
+    public void ApplyShield()
+    {
+        animator.SetBool("hasShield", true);
+        _hasShield = true;
+    }
+
+    private void CheckShieldState()
+    {
+        if (_hasShield)
+        {
+            _shieldTime -= Time.deltaTime;
+            if (_shieldTime < 0)
+            {
+                _shieldTime = shieldTime;
+                _hasShield = false;
+                animator.SetBool("hasShield", false);
+            }
+        }
     }
 
     private void PerformMovement()
@@ -83,7 +109,10 @@ public class SpaceshipController : MonoBehaviour
         {
             EnemyAI enemyAI = col.gameObject.GetComponent<EnemyAI>();
             enemyAI.DestroyEnemy();
-            GameManager.lives = GameManager.lives - 1;
+            if (!_hasShield)
+            {
+                GameManager.lives = GameManager.lives - 1;
+            }
         }
     }
 }

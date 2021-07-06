@@ -11,6 +11,7 @@ public class PowerUp : MonoBehaviour
     public Sprite healthPackSprite;
     public Sprite slowDownSprite;
     public Sprite explosionSprite;
+    public Sprite shieldSprite;
 
     private bool powerUpTaken = false;
 
@@ -42,6 +43,9 @@ public class PowerUp : MonoBehaviour
             case PowerUpType.EnemySlowDown:
                 spriteRenderer.sprite = slowDownSprite;
                 break;
+            case PowerUpType.Shield:
+                spriteRenderer.sprite = shieldSprite;
+                break;
             default:
                 break;
         }
@@ -65,6 +69,9 @@ public class PowerUp : MonoBehaviour
                     break;
                 case PowerUpType.EnemySlowDown:
                     SlowDownEnemies();
+                    break;
+                case PowerUpType.Shield:
+                    ApplyShield();
                     break;
                 default:
                     break;
@@ -96,5 +103,11 @@ public class PowerUp : MonoBehaviour
                 enemy.SendMessage("SlowDown");
             }
         }
+    }
+
+    private void ApplyShield()
+    {
+        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+        player.SendMessage("ApplyShield");
     }
 }
