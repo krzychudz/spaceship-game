@@ -29,10 +29,14 @@ public class SpaceshipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PerformMovement();
         RotateToMouse();
         PerformShoot();
         CheckShieldState();
+    }
+
+    void FixedUpdate()
+    {
+        PerformMovement();
     }
 
     public void ApplyShield()
