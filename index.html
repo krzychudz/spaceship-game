@@ -27,13 +27,13 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL Build.loader.js";
+      var loaderUrl = buildUrl + "/WebGLBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebGL Build.data.br",
-        frameworkUrl: buildUrl + "/WebGL Build.framework.js.br",
-        codeUrl: buildUrl + "/WebGL Build.wasm.br",
+        dataUrl: buildUrl + "/WebGLBuild.data.unityweb",
+        frameworkUrl: buildUrl + "/WebGLBuild.framework.js.unityweb",
+        codeUrl: buildUrl + "/WebGLBuild.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
-        companyName: "com.dziq",
+        companyName: "comDziq",
         productName: "Spaceship",
         productVersion: "1.0",
       };
@@ -53,8 +53,8 @@
           mobileWarning.style.display = "none";
         }, 5000);
       } else {
-        canvas.style.width = "1024px";
-        canvas.style.height = "768px";
+        canvas.style.width = "800px";
+        canvas.style.height = "600px";
       }
       loadingBar.style.display = "block";
 
