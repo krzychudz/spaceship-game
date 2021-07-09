@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
     public static int score = 0;
     public static int lives = 3;
     public static float enemySpawnCooldown = 5.0f;
-    public static float playerShootCooldown = 1.0f;
+    public static float playerShootCooldown = 0.6f;
+    public static float enemyMovementSpeed = 3.5f;
 
     public float minEnemySpawnCooldown = 2.0f;
     public float minPlayerShootCooldown = 0.4f;
+    public float maxEnemyMovementSpeed = 5.0f;
 
     private int updatedAt = -1;
 
@@ -50,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateEnemySpawnCdIfNecessary()
     {
-        if (score % 1000 == 0 && score != 0 && updatedAt != score)
+        if (score % 500 == 0 && score != 0 && updatedAt != score)
         {
             updatedAt = score;
             if (enemySpawnCooldown > minEnemySpawnCooldown)
@@ -61,6 +63,11 @@ public class GameManager : MonoBehaviour
             if (playerShootCooldown > minPlayerShootCooldown)
             {
                 playerShootCooldown = playerShootCooldown - 0.05f;
+            }
+
+            if (enemyMovementSpeed < maxEnemyMovementSpeed)
+            {
+                enemyMovementSpeed = enemyMovementSpeed + 0.1f;
             }
         }
     }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float movementSpeed = 3.5f;
     public float slowDownTime = 0.0f;
 
     public GameObject destroyedPrefab;
@@ -12,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody2D rb;
     private Transform enemyTransform;
     private Transform playerTransform;
+    private float movementSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyTransform = GetComponent<Transform>();
         playerTransform = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<Transform>();
+        movementSpeed = GameManager.enemyMovementSpeed;
     }
 
     // Update is called once per frame
