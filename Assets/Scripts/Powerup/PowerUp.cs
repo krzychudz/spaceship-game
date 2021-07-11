@@ -12,6 +12,7 @@ public class PowerUp : MonoBehaviour
     public Sprite slowDownSprite;
     public Sprite explosionSprite;
     public Sprite shieldSprite;
+    public Sprite shootSpeedUp;
 
     private bool powerUpTaken = false;
 
@@ -46,6 +47,9 @@ public class PowerUp : MonoBehaviour
             case PowerUpType.Shield:
                 spriteRenderer.sprite = shieldSprite;
                 break;
+            case PowerUpType.ShootSpeedUp:
+                spriteRenderer.sprite = shootSpeedUp;
+                break;
             default:
                 break;
         }
@@ -73,10 +77,18 @@ public class PowerUp : MonoBehaviour
                 case PowerUpType.Shield:
                     ApplyShield();
                     break;
+                case PowerUpType.ShootSpeedUp:
+                    SpeedUpShooting();
+                    break;
                 default:
                     break;
             }
         }
+    }
+
+    private void SpeedUpShooting()
+    {
+        GameManager.playerShootCooldown = GameManager.playerShootCooldown - 0.05f;
     }
 
     private void ClearEnemies()

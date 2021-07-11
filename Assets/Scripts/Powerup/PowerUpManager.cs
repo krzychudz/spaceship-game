@@ -7,7 +7,8 @@ public enum PowerUpType
     Health,
     Explosion,
     EnemySlowDown,
-    Shield
+    Shield,
+    ShootSpeedUp
 }
 
 public class PowerUpManager : MonoBehaviour
@@ -43,8 +44,13 @@ public class PowerUpManager : MonoBehaviour
                     powerUpTypes.Add(PowerUpType.Health);
                 }
 
+                if (GameManager.playerShootCooldown > GameManager.minPlayerShootCooldown)
+                {
+                    powerUpTypes.Add(PowerUpType.ShootSpeedUp);
+                }
+
                 PowerUpType selectedPowerUp = (PowerUpType)powerUpTypes[Random.Range(0, powerUpTypes.Count)];
-                
+  
                 Vector3 powerUpPositon = new Vector3(Random.Range(0.05f, 0.95f), Random.Range(0.05f, 0.95f), 10);
 
                 GameObject powerUp = Instantiate(powerUpPrefab, Camera.main.ViewportToWorldPoint(powerUpPositon), Quaternion.identity) as GameObject;
