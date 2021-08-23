@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         scoreText.SetText("Score: " + score.ToString());
-        livesText.SetText("Lives: " + lives.ToString());
+        livesText.SetText("Life: " + lives.ToString());
         UpdateEnemySpawnCdIfNecessary();
         CheckLives();
 

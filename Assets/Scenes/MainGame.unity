@@ -414,7 +414,7 @@ MonoBehaviour:
   livesText: {fileID: 2046728020}
   enemySpawnPrefab: {fileID: 5158559528403398558, guid: f4c42b6b1f1c1204582cdc219f8614f2, type: 3}
   minEnemySpawnCooldown: 1.5
-  minPlayerShootCooldown: 0.15
+  maxEnemyMovementSpeed: 5
 --- !u!4 &899294779
 Transform:
   m_ObjectHideFlags: 0
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lives: 3'
+  m_text: 'Life: 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d161b66eda676444a8d86e5a8ab85834, type: 2}
   m_sharedMaterial: {fileID: -3328253792147477813, guid: d161b66eda676444a8d86e5a8ab85834, type: 2}
